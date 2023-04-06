@@ -55,10 +55,27 @@ public class SampleClass {
     public int a;
     public boolean b;
 
-    //    implement a custom .equals(SampleClass other){} method here.
+    //    implement a custom .equals(SampleClass other) method here.
+    // Declaring a method signature for " equals()" method. It takes a single parameter of type " sampleLcass" and return boolean value.
+    public boolean equals(SampleClass other){
+        // Checking and returning boolean value if the current object is same as other ojbect. 
+        if(this == other){
+            return true;
+        }
+        // Checking if other object is null or its class is not same as this class. 
+        if(other == null || getClass() != other.getClass()){
+            return false;
+        }
+        // comparing and returning a and b fields of this and other objects. 
+        return a == other.a && b == other.b;
+    }
 
 
     //    implement a custom .toString(){} method here.
+    public String toString(){
+        // returning a string representation of sampleclass in format of sampleclass( a = value of a and b = value of b)
+        return "SampleClass{a=" + a + ", b=" + b + "}";
+    }
 
     
 }
